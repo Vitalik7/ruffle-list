@@ -1,11 +1,11 @@
 let btn = document.getElementById('create')
 let video = document.getElementById('video')
 
-const all = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
+const all = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
 
-const all1 = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
-const all2= ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
-const all3 = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
+const all1 = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
+const all2= ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
+const all3 = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
 
 
 const allList = document.getElementById('table')
@@ -50,7 +50,6 @@ all3.forEach((project, i) => {
 })
 
 btn.onclick = () => {
-  let arr = [...Array(12).keys()]
   video.style.display = 'block'
   video.play()
 
@@ -58,7 +57,7 @@ btn.onclick = () => {
   setTimeout(() => {
     video.style.display = 'none'
 
-    arr.forEach(function (el, i) {
+    all.forEach(function (el, i) {
       setTimeout(function () {
         const el = document.getElementById(`m${i}`)
         if (el) {
@@ -67,7 +66,7 @@ btn.onclick = () => {
         }
         const item = document.getElementById(`p${i}`)
         if (item) {
-          item.style.display = 'flex'
+          item.style.display = 'block'
           setTimeout(() => {
             item.style.transform = i > 4 ? 'translateY(0vh)' : 'translateX(0vw)'
             item.style.transition = `${2}s`
@@ -75,5 +74,17 @@ btn.onclick = () => {
         }
       }, i * interval);
     });
-  }, 5000);
+  }, 6000);
 }
+
+
+let fullscreen = document.querySelector("body");
+let button = document.getElementById("fullButton");
+
+button.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    fullscreen?.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+});
