@@ -1,12 +1,14 @@
 let btn = document.getElementById('create')
 let video = document.getElementById('video')
+let members = document.getElementById('memb')
 
-const all = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
+const all1 = shuffle(['Сокуренко Наталія', 'Лавренко Владислав', 'Кравченко Назар', 'Дьоміна Анастасія', 'Аня Стасьо', 'Чепурна Каріна', 'Пащенко Глеб', 'Мащенко Ярослав', 'Квасніцький Ілля', 'Приходько Маріна', 'Пономаренко Софія', 'Любченко Євангеліна', 'Йосипенко Богдан', 'Мусієнко Валерія', 'Казека Софія', 'Темченко Джесіка', 'Козлов Паша', 'Кравченко Аня', 'Люлька Данило', 'Коломієць Тіна', 'Медик Аня', 'Вербівська Софія', 'Сотченко Ульяна', 'Шако Антон', 'Гладун Аня', 'Коваленко Дарія'])
+const all2 = shuffle(['Бунчук Ангеліна', 'Кравченко Віка', 'Шевченко Назар', 'Коваль Дарина', 'Драчук Каріна', 'Бунчук Давид', 'Коломієць Тіма', 'Мащенко Ліза', 'Кравченко Давид', 'Люлько Данило', 'Лесич стефанія', 'Темченко Даніела', 'Костюк Василь', 'Гладун Надя', 'Шраменко Артур', 'Озеран Катерина', 'Чернець Олександра', 'Саприкіна Вікторія', 'Василенко Влад', 'Люлько Тамара', 'Пацалюк Кароліна', 'Карпова Катя', 'Білецька Надія', 'Коломієць Ніка', 'Цегельник Юлія', 'Пацалюк Марк'])
+const all3 = shuffle(['Тонкопряд Владислав', 'Кравченко Назар', 'Вознюк Альона', 'Гладун Влад', 'Шраменко Марія', 'Білецький Андрій', 'Пономаренко Софія', 'Дзюба Катя', 'Чернова Софія', 'Кубрак Анна', 'Боковня Віка', 'Тищенко Юлія', 'Шаповал Владислав', 'Коваленко Софія', 'Ямковий Дмитро', 'Кравченко Веня', 'Коломієць Назар', 'Мащенко Поліна', 'Вишневська Анастасія', 'Богач Марія', 'Кравченко Зоряна', 'Яковенко Дмитро', 'Складанна Надія', 'Ракітін Даниїл', 'Братко Анастасія', 'Гладун Лілія'])
 
-const all1 = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
-const all2= ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
-const all3 = ['Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко', 'Віталік Лавренко'] 
+const all = shuffle([...all1, ...all2, ...all3])
 
+members.innerText = `Учасники - ${all.length}`
 
 const allList = document.getElementById('table')
 const group1 = document.getElementById('table1')
@@ -17,7 +19,7 @@ all.forEach((project, i) => {
   const liEl = document.createElement('li')
   liEl.className = 'table-row'
   liEl.id = `m${i}`
-  liEl.innerText = `${project} - ${i}`
+  liEl.innerText = `${project}`
 
   allList.appendChild(liEl)
 })
@@ -26,7 +28,7 @@ all1.forEach((project, i) => {
   const liEl = document.createElement('li')
   liEl.className = 'table-row group1'
   liEl.id = `p${i}`
-  liEl.innerText = `${project} - ${i}`
+  liEl.innerText = `${project}`
   group1.appendChild(liEl)
 })
 
@@ -36,7 +38,7 @@ all2.forEach((project, i) => {
 
   const ind = all1.length + i
   liEl.id = `p${ind}`
-  liEl.innerText = `${project} - ${ind}`
+  liEl.innerText = `${project}`
   group2.appendChild(liEl)
 })
 
@@ -45,7 +47,7 @@ all3.forEach((project, i) => {
   liEl.className = 'table-row group3'
   const ind = all1.length + all2.length + i
   liEl.id = `p${ind}`
-  liEl.innerText = `${project} - ${ind}`
+  liEl.innerText = `${project}`
   group3.appendChild(liEl)
 })
 
@@ -59,11 +61,11 @@ btn.onclick = () => {
 
     all.forEach(function (el, i) {
       setTimeout(function () {
-        const el = document.getElementById(`m${i}`)
-        if (el) {
-          el.style.display = 'none'
-          el.style.transition = `opacity ${1}s linear`
-        }
+        // const el = document.getElementById(`m${i}`)
+        // if (el) {
+        //   el.style.display = 'none'
+        //   el.style.transition = `opacity ${1}s linear`
+        // }
         const item = document.getElementById(`p${i}`)
         if (item) {
           item.style.display = 'block'
@@ -88,3 +90,18 @@ button.addEventListener("click", () => {
     document.exitFullscreen();
   }
 });
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  while (currentIndex != 0) {
+
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}

@@ -50,19 +50,21 @@ body:-moz-full-screen {
 .group1 {
   display: none;
   transform: translateX(-50vw);
-  background-color: aqua !important;
+  background-color: yellow !important;
 }
 
 .group2 {
   display: none;
   transform: translateY(-200vh);
-  background-color: coral !important;
+  color: #fff;
+  background-color: blue !important;
 }
 
 .group3 {
   display: none;
   transform: translateX(50vh);
-  background-color: gold !important;
+  color: #fff;
+  background-color: green !important;
 }
 
 #video {
@@ -94,9 +96,9 @@ ul {
 
 .responsive-table li {
   border-radius: 3px;
-  padding: 15px 20px;
+  padding: 10px 10px;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
   text-align: center;
 }
 .responsive-table .table-header {
